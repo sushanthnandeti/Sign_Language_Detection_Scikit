@@ -21,3 +21,7 @@ y_predict = model.predict(x_test)
 score = accuracy_score(y_predict, y_test)
 
 print(f'{score * 100} of samples were classified correctly!')
+
+f = open('model.p', 'wb')
+pickle.dump({'model' : model}, f)
+f.close()
